@@ -27,7 +27,7 @@
   });
 
   $('.use-app').on('click', function(e) {
-    gtag('event', 'Use app - ' + e.target.hash);
+    gtag('event', 'Use app');
   });
 
   $('.discover').on('click', function(e) {
