@@ -26,6 +26,18 @@
     offset: 100
   });
 
+  $('.use-app').on('click', function(e) {
+    gtag('event', 'Use app - ' + e.target.hash);
+  });
+
+  $('.discover').on('click', function(e) {
+    gtag('event', 'Discover - ' + e.target.hash);
+  });
+
+  $('#mc-embedded-subscribe-form').on('submit', function(e) {
+    gtag('event', 'Subscribe submit');
+  });
+
   // Collapse Navbar
   var navbarCollapse = function() {
     if ($("#mainNav").offset().top > 100) {
