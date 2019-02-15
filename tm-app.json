@@ -1,0 +1,18 @@
+{
+  "$jason": {
+    "head": {
+      "title": "Territory Manager",
+      "offline": "true"
+    },
+    "theme": "#1976D2",
+    "body": {
+      "background": {
+        "type": "html",
+        "url": "https://app.territorymanager.tools",
+        "action": {
+          "type": "$default"
+        }
+      }
+    }
+  }
+}
