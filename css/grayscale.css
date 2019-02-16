@@ -304,6 +304,10 @@ a:focus, a:hover {
   color: #795548 !important;
 }
 
+.google-play-link img {
+  width: 180px;
+}
+
 footer {
   padding: 5rem 0;
 }
