@@ -129,3 +129,24 @@ gulp.task("default", gulp.parallel('vendor', css, js));
 
 // dev task
 gulp.task("dev", gulp.parallel(watchFiles, browserSync));
+
+gulp.task("build", () =>
+  gulp
+    .src([
+      'css/**/*',
+      'img/**/*',
+      'js/**/*',
+      'vendor/**/*',
+      'vendor/**/**/*',
+      'BingSiteAuth.xml',
+      'index.html',
+      'infinit.gif',
+      'manifest.json',
+      'preload.json',
+      'tm-app.json',
+      'privacy-policy.html',
+      'terms-of-service.html',
+      'sitemap.xml',
+    ], { base: '.' })
+    .pipe(gulp.dest('./dist'))
+);
