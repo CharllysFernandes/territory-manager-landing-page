@@ -1,328 +1,516 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="author" content="TerritoryManager.Tools" />
+    <!-- Make the page mobile compatible -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta property="og:url" content="https://territorymanager.tools" />
+    <meta
+      property="og:title"
+      content="Territory Manager - JW assistant to help you do a happy service."
+    />
+    <meta
+      property="og:description"
+      content="This app will help you manage your field service/ministry records."
+    />
+    <meta property="og:image" content="/img/background.png" />
+    <meta property="og:type" content="website" />
+    <meta
+      name="description"
+      content="This app will help you manage your field service/ministry records."
+    />
+    <link rel="canonical" href="https://territorymanager.tools" />
+    <link rel="icon" href="/img/favicon.png" />
+    <link rel="manifest" href="/manifest.json" />
 
-<head>
+    <title>
+      Territory manager - JW assistant to help you do a happy service
+    </title>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="author" content="TerritoryManager.Tools">
-  <!-- Make the page mobile compatible -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta property="og:url" content="https://territorymanager.tools">
-  <meta property="og:title" content="Territory Manager - JW assistant to help you do a happy service.">
-  <meta property="og:description" content="This app will help you manage your field service/ministry records.">
-  <meta property="og:image" content="/img/background.png">
-  <meta property="og:type" content="website">
-  <meta name="description" content="This app will help you manage your field service/ministry records.">
-  <link rel="canonical" href="https://territorymanager.tools">
-  <link rel="icon" href="/img/favicon.png" />
-  <link rel="manifest" href="/manifest.json">
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 
-  <title>Territory manager - JW assistant to help you do a happy service</title>
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Varela+Round"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i"
+      rel="stylesheet"
+    />
 
-  <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/grayscale.min.css" rel="stylesheet" />
 
-  <!-- Custom fonts for this template -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i" rel="stylesheet">
-
-  <!-- Custom styles for this template -->
-  <link href="css/grayscale.min.css" rel="stylesheet">
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127422115-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-127422115-1', {
-      'linker': {
-        'domains': ['www.territorymanager.tools', 'territorymanager.tools', 'app.territorymanager.tools']
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-127422115-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
       }
-    });
-    var source = window.location.origin + window.location.pathname;
-    gtag('event', 'Pageview - ' + source);
-    window.gtag = gtag;
-  </script>
-  <script src="https://browser.sentry-cdn.com/4.1.1/bundle.min.js" crossorigin="anonymous"></script>
-  <script>
-    var env = 'prod';
-    var url = window.location.href;
-    if (url.indexOf('localhost') > -1 || url.indexOf('127.0.0.1') > -1) {
-      env = 'dev';
-    }
-    Sentry.init({ dsn: 'https://03757123364e48c4875396f3742e3e52@sentry.io/1386445', environment: env });
+      gtag("js", new Date());
 
-  </script>
+      gtag("config", "UA-127422115-1", {
+        linker: {
+          domains: [
+            "www.territorymanager.tools",
+            "territorymanager.tools",
+            "app.territorymanager.tools",
+          ],
+        },
+      });
+      var source = window.location.origin + window.location.pathname;
+      gtag("event", "Pageview - " + source);
+      window.gtag = gtag;
+    </script>
+    <script
+      src="https://browser.sentry-cdn.com/4.1.1/bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      var env = "prod";
+      var url = window.location.href;
+      if (url.indexOf("localhost") > -1 || url.indexOf("127.0.0.1") > -1) {
+        env = "dev";
+      }
+      Sentry.init({
+        dsn: "https://03757123364e48c4875396f3742e3e52@sentry.io/1386445",
+        environment: env,
+      });
+    </script>
+  </head>
 
-</head>
-
-<body id="page-top">
-
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">Territory Manager</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#maps">Maps</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#service">Service</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#householders">Householders</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#householder-details">Details</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#subscribe">Subscribe</a>
-          </li>
-        </ul>
-      </div>
+  <body id="page-top">
+    <div
+      style="
+        padding: 10px;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        background-color: #33eb91;
+        z-index: 99999;
+      "
+    >
+      NOTICE: Hello brothers and sisters, thank you for using this app!
+      Unfortunately, this is not actively maintained anymore and has bugs. You
+      may migrate to using
+      <a
+        href="https://play.google.com/store/apps/details?id=com.lostpixels.fieldservice&hl=en&gl=US"
+      >
+        Ministry Assistant App
+      </a>
+      which is a better version of this app.
     </div>
-  </nav>
-
-  <!-- Header -->
-  <header class="masthead">
-    <!-- <img data-src="img/bg-masthead.jpg" class="lozad masthead--img" /> -->
-    <div class="container d-flex h-100 align-items-center">
-      <div class="mx-auto text-center">
-        <h1 class="mx-auto my-0 text-uppercase">Territory Manager</h1>
-        <h2 class="text-white-50 mx-auto mt-2 mb-5">A web application that will assist Jehovah's Witnesses on the field ministry.</h2>
-        <a href="#maps" class="discover btn btn-secondary js-scroll-trigger">DISCOVER</a>
-        <a href="https://app.territorymanager.tools" target="_blank" class="use-app btn btn-primary js-scroll-trigger">Use Web App</a>
-        <a href="https://play.google.com/store/apps/details?id=com.territorymanager&utm_source=website&utm_campaign=landingpage&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" class="android btn btn-success">GET ANDROID</a>
-      </div>
-    </div>
-  </header>
-
-  <!-- maps Section -->
-  <section id="maps" class="maps-section text-center">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <h2 class="text-white mb-4">Feature - Maps</h2>
-          <p class="text-white-50">There is a feature to add your householders to a map, so you can remember easily pinpoint their locations when you visit them.</p>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top"
+          >Territory Manager</a
+        >
+        <button
+          class="navbar-toggler navbar-toggler-right"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#maps">Maps</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#service">Service</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#householders"
+                >Householders</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#householder-details"
+                >Details</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#subscribe"
+                >Subscribe</a
+              >
+            </li>
+          </ul>
         </div>
       </div>
-      <img data-src="img/maps.jpg" class="img-fluid lozad" alt="">
-      <div class="maps__cta">
-        <a href="#service" class="discover btn btn-secondary js-scroll-trigger">Discover</a>
-        <a href="https://app.territorymanager.tools/householder/map" target="_blank" class="use-app btn btn-primary js-scroll-trigger">See map</a>
-        <a href="https://play.google.com/store/apps/details?id=com.territorymanager&utm_source=website&utm_campaign=landingpage&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" class="pad-top android btn btn-success">GET ANDROID</a>
+    </nav>
+
+    <!-- Header -->
+    <header class="masthead">
+      <!-- <img data-src="img/bg-masthead.jpg" class="lozad masthead--img" /> -->
+      <div class="container d-flex h-100 align-items-center">
+        <div class="mx-auto text-center">
+          <h1 class="mx-auto my-0 text-uppercase">Territory Manager</h1>
+          <h2 class="text-white-50 mx-auto mt-2 mb-5">
+            A web application that will assist Jehovah's Witnesses on the field
+            ministry.
+          </h2>
+          <a href="#maps" class="discover btn btn-secondary js-scroll-trigger"
+            >DISCOVER</a
+          >
+          <a
+            href="https://app.territorymanager.tools"
+            target="_blank"
+            class="use-app btn btn-primary js-scroll-trigger"
+            >Use Web App</a
+          >
+          <a
+            href="https://play.google.com/store/apps/details?id=com.territorymanager&utm_source=website&utm_campaign=landingpage&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
+            class="android btn btn-success"
+            >GET ANDROID</a
+          >
+        </div>
       </div>
-    </div>
-  </section>
+    </header>
 
-  <!-- Projects Section -->
-  <section id="service" class="projects-section bg-light">
-    <div class="container">
-
-      <!-- Featured Project Row -->
-      <div class="row align-items-center no-gutters mb-4 mb-lg-5">
-        <div class="col-lg-8 mx-auto">
-          <h2 class="text-primary mb-4 text-center">More Features</h2>
-        </div>
-        <div class="col-xl-8 col-lg-7">
-          <img class="img-fluid mb-3 mb-lg-0 lozad" data-src="img/service.png" alt="">
-        </div>
-        <div class="col-xl-4 col-lg-5">
-          <div class="featured-text text-center text-lg-left">
-            <h4>Feature - Service</h4>
-            <p class="text-black-50 mb-0">Record how many videos and publications have you shared in the ministry. This feature will also allow you to record how many hours you have dedicated to minister to Jehovah.</p>
-            <div class="maps__cta">
-                <a href="#householders" class="discover btn btn-secondary js-scroll-trigger">Discover</a>
-                <a href="https://app.territorymanager.tools/service" target="_blank" class="use-app btn btn-primary js-scroll-trigger">See service</a>
-                <a href="https://play.google.com/store/apps/details?id=com.territorymanager&utm_source=website&utm_campaign=landingpage&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" class="pad-top android btn btn-success">GET ANDROID</a>
-              </div>
+    <!-- maps Section -->
+    <section id="maps" class="maps-section text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2 class="text-white mb-4">Feature - Maps</h2>
+            <p class="text-white-50">
+              There is a feature to add your householders to a map, so you can
+              remember easily pinpoint their locations when you visit them.
+            </p>
           </div>
         </div>
+        <img data-src="img/maps.jpg" class="img-fluid lozad" alt="" />
+        <div class="maps__cta">
+          <a
+            href="#service"
+            class="discover btn btn-secondary js-scroll-trigger"
+            >Discover</a
+          >
+          <a
+            href="https://app.territorymanager.tools/householder/map"
+            target="_blank"
+            class="use-app btn btn-primary js-scroll-trigger"
+            >See map</a
+          >
+          <a
+            href="https://play.google.com/store/apps/details?id=com.territorymanager&utm_source=website&utm_campaign=landingpage&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
+            class="pad-top android btn btn-success"
+            >GET ANDROID</a
+          >
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Projects Section -->
-  <section id="householders" class="projects-section bg-light">
+    <!-- Projects Section -->
+    <section id="service" class="projects-section bg-light">
       <div class="container">
-  
         <!-- Featured Project Row -->
         <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+          <div class="col-lg-8 mx-auto">
+            <h2 class="text-primary mb-4 text-center">More Features</h2>
+          </div>
+          <div class="col-xl-8 col-lg-7">
+            <img
+              class="img-fluid mb-3 mb-lg-0 lozad"
+              data-src="img/service.png"
+              alt=""
+            />
+          </div>
           <div class="col-xl-4 col-lg-5">
-              <div class="featured-text text-center text-lg-left">
-                <h4>Feature - Householders</h4>
-                <p class="text-black-50 mb-0">The web application allows you to record your householders, see them in a list, know how many times you have visited them and determine when you have last visited them.</p>
-                <div class="maps__cta">
-                    <a href="#dashboard" class="discover btn btn-secondary js-scroll-trigger">Discover</a>
-                    <a href="https://app.territorymanager.tools/householder/list" target="_blank" class="use-app btn btn-primary js-scroll-trigger">See list</a>
-                    <a href="https://play.google.com/store/apps/details?id=com.territorymanager&utm_source=website&utm_campaign=landingpage&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" class="pad-top android btn btn-success">GET ANDROID</a>
-                  </div>
+            <div class="featured-text text-center text-lg-left">
+              <h4>Feature - Service</h4>
+              <p class="text-black-50 mb-0">
+                Record how many videos and publications have you shared in the
+                ministry. This feature will also allow you to record how many
+                hours you have dedicated to minister to Jehovah.
+              </p>
+              <div class="maps__cta">
+                <a
+                  href="#householders"
+                  class="discover btn btn-secondary js-scroll-trigger"
+                  >Discover</a
+                >
+                <a
+                  href="https://app.territorymanager.tools/service"
+                  target="_blank"
+                  class="use-app btn btn-primary js-scroll-trigger"
+                  >See service</a
+                >
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.territorymanager&utm_source=website&utm_campaign=landingpage&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
+                  class="pad-top android btn btn-success"
+                  >GET ANDROID</a
+                >
               </div>
             </div>
-          <div class="col-xl-8 col-lg-7">
-            <img class="img-fluid mb-3 mb-lg-0 lozad" data-src="img/householders.png" alt="">
           </div>
         </div>
       </div>
     </section>
 
-  <!-- Projects Section -->
-  <section id="dashboard" class="projects-section bg-light">
+    <!-- Projects Section -->
+    <section id="householders" class="projects-section bg-light">
       <div class="container">
-  
+        <!-- Featured Project Row -->
+        <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+          <div class="col-xl-4 col-lg-5">
+            <div class="featured-text text-center text-lg-left">
+              <h4>Feature - Householders</h4>
+              <p class="text-black-50 mb-0">
+                The web application allows you to record your householders, see
+                them in a list, know how many times you have visited them and
+                determine when you have last visited them.
+              </p>
+              <div class="maps__cta">
+                <a
+                  href="#dashboard"
+                  class="discover btn btn-secondary js-scroll-trigger"
+                  >Discover</a
+                >
+                <a
+                  href="https://app.territorymanager.tools/householder/list"
+                  target="_blank"
+                  class="use-app btn btn-primary js-scroll-trigger"
+                  >See list</a
+                >
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.territorymanager&utm_source=website&utm_campaign=landingpage&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
+                  class="pad-top android btn btn-success"
+                  >GET ANDROID</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-8 col-lg-7">
+            <img
+              class="img-fluid mb-3 mb-lg-0 lozad"
+              data-src="img/householders.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="dashboard" class="projects-section bg-light">
+      <div class="container">
         <!-- Featured Project Row -->
         <div class="row align-items-center no-gutters mb-4 mb-lg-5">
           <div class="col-xl-8 col-lg-7">
-            <img class="img-fluid mb-3 mb-lg-0 lozad" data-src="img/dashboard.png" alt="">
+            <img
+              class="img-fluid mb-3 mb-lg-0 lozad"
+              data-src="img/dashboard.png"
+              alt=""
+            />
           </div>
           <div class="col-xl-4 col-lg-5">
             <div class="featured-text text-center text-lg-left">
               <h4>Feature - Dashboard</h4>
-              <p class="text-black-50 mb-0">See in a glance, how you have been with the current month, of the date selected. Shows weekly and monthly total of your activities/shared materials in your ministry.</p>
+              <p class="text-black-50 mb-0">
+                See in a glance, how you have been with the current month, of
+                the date selected. Shows weekly and monthly total of your
+                activities/shared materials in your ministry.
+              </p>
               <div class="maps__cta">
-                  <a href="#householder-details" class="discover btn btn-secondary js-scroll-trigger">Discover</a>
-                  <a href="https://app.territorymanager.tools/dashboard" target="_blank" class="use-app btn btn-primary js-scroll-trigger">Dashboard</a>
-                  <a href="https://play.google.com/store/apps/details?id=com.territorymanager&utm_source=website&utm_campaign=landingpage&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" class="pad-top android btn btn-success">GET ANDROID</a>
-                </div>
+                <a
+                  href="#householder-details"
+                  class="discover btn btn-secondary js-scroll-trigger"
+                  >Discover</a
+                >
+                <a
+                  href="https://app.territorymanager.tools/dashboard"
+                  target="_blank"
+                  class="use-app btn btn-primary js-scroll-trigger"
+                  >Dashboard</a
+                >
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.territorymanager&utm_source=website&utm_campaign=landingpage&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
+                  class="pad-top android btn btn-success"
+                  >GET ANDROID</a
+                >
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-  <!-- Projects Section -->
-  <section id="householder-details" class="projects-section bg-light">
+    <!-- Projects Section -->
+    <section id="householder-details" class="projects-section bg-light">
       <div class="container">
-  
         <!-- Featured Project Row -->
         <div class="row align-items-center no-gutters mb-4 mb-lg-5">
           <div class="col-xl-4 col-lg-5">
-              <div class="featured-text text-center text-lg-left">
-                <h4>Feature - Householder Details</h4>
-                <p class="text-black-50 mb-0">The web application allows you to record some of your householder's details, mark if you have started a bible study with the householder, edit the details provided and most importantly, add notes regarding your visits.</p>
-                <div class="maps__cta">
-                    <a href="#subscribe" class="discover btn btn-secondary js-scroll-trigger">Discover</a>
-                    <a href="https://app.territorymanager.tools/householder/1" target="_blank" class="use-app btn btn-primary js-scroll-trigger">See list</a>
-                    <a href="https://play.google.com/store/apps/details?id=com.territorymanager&utm_source=website&utm_campaign=landingpage&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" class="pad-top android btn btn-success">GET ANDROID</a>
-                  </div>
+            <div class="featured-text text-center text-lg-left">
+              <h4>Feature - Householder Details</h4>
+              <p class="text-black-50 mb-0">
+                The web application allows you to record some of your
+                householder's details, mark if you have started a bible study
+                with the householder, edit the details provided and most
+                importantly, add notes regarding your visits.
+              </p>
+              <div class="maps__cta">
+                <a
+                  href="#subscribe"
+                  class="discover btn btn-secondary js-scroll-trigger"
+                  >Discover</a
+                >
+                <a
+                  href="https://app.territorymanager.tools/householder/1"
+                  target="_blank"
+                  class="use-app btn btn-primary js-scroll-trigger"
+                  >See list</a
+                >
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.territorymanager&utm_source=website&utm_campaign=landingpage&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
+                  class="pad-top android btn btn-success"
+                  >GET ANDROID</a
+                >
               </div>
             </div>
+          </div>
           <div class="col-xl-8 col-lg-7">
-            <img class="img-fluid mb-3 mb-lg-0 lozad" data-src="img/householders.png" alt="">
+            <img
+              class="img-fluid mb-3 mb-lg-0 lozad"
+              data-src="img/householders.png"
+              alt=""
+            />
           </div>
         </div>
       </div>
     </section>
 
-  <!-- Signup Section -->
-  <section id="subscribe" class="signup-section">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-10 col-lg-8 mx-auto text-center">
-
-          <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
-          <h2 class="text-white mb-5">Subscribe to receive updates!</h2>
-          <form
-            action="https://tools.us19.list-manage.com/subscribe/post?u=c89496242009eefeefdbad7bb&amp;id=a1cce6d823"
-            method="post"
-            id="mc-embedded-subscribe-form"
-            name="mc-embedded-subscribe-form"
-            class="validate form-inline d-flex"
-            target="_blank"
-          >
-            <input name="EMAIL" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" placeholder="Enter email address...">
-            <button type="submit" class="btn btn-primary mx-auto">Subscribe</button>
-          </form>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section class="contact-section bg-black">
-    <div class="container">
-
-      <div class="row">
-
-        <div class="col-md-4 mb-3 mb-md-0">
-          <div class="card py-4 h-100">
-            <div class="card-body text-center">
-              <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-              <h4 class="text-uppercase m-0">Address</h4>
-              <hr class="my-4">
-              <div class="small text-black-50">Jehovah's Witnesses Worldwide Family</div>
-            </div>
+    <!-- Signup Section -->
+    <section id="subscribe" class="signup-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 col-lg-8 mx-auto text-center">
+            <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+            <h2 class="text-white mb-5">Subscribe to receive updates!</h2>
+            <form
+              action="https://tools.us19.list-manage.com/subscribe/post?u=c89496242009eefeefdbad7bb&amp;id=a1cce6d823"
+              method="post"
+              id="mc-embedded-subscribe-form"
+              name="mc-embedded-subscribe-form"
+              class="validate form-inline d-flex"
+              target="_blank"
+            >
+              <input
+                name="EMAIL"
+                class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0"
+                id="inputEmail"
+                placeholder="Enter email address..."
+              />
+              <button type="submit" class="btn btn-primary mx-auto">
+                Subscribe
+              </button>
+            </form>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="col-md-4 mb-3 mb-md-0">
-          <div class="card py-4 h-100">
-            <div class="card-body text-center">
-              <i class="fas fa-envelope text-primary mb-2"></i>
-              <h4 class="text-uppercase m-0">Email</h4>
-              <hr class="my-4">
-              <div class="small text-black-50">
-                <a href="#">admin@territorymanager.tools</a>
+    <!-- Contact Section -->
+    <section class="contact-section bg-black">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-3 mb-md-0">
+            <div class="card py-4 h-100">
+              <div class="card-body text-center">
+                <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                <h4 class="text-uppercase m-0">Address</h4>
+                <hr class="my-4" />
+                <div class="small text-black-50">
+                  Jehovah's Witnesses Worldwide Family
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-3 mb-md-0">
+            <div class="card py-4 h-100">
+              <div class="card-body text-center">
+                <i class="fas fa-envelope text-primary mb-2"></i>
+                <h4 class="text-uppercase m-0">Email</h4>
+                <hr class="my-4" />
+                <div class="small text-black-50">
+                  <a href="#">admin@territorymanager.tools</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-3 mb-md-0">
+            <div class="card py-4 h-100">
+              <div class="card-body text-center">
+                <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                <h4 class="text-uppercase m-0">Phone</h4>
+                <hr class="my-4" />
+                <div class="small text-black-50">+63 (906) 578-4859</div>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="col-md-4 mb-3 mb-md-0">
-          <div class="card py-4 h-100">
-            <div class="card-body text-center">
-              <i class="fas fa-mobile-alt text-primary mb-2"></i>
-              <h4 class="text-uppercase m-0">Phone</h4>
-              <hr class="my-4">
-              <div class="small text-black-50">+63 (906) 578-4859</div>
-            </div>
-          </div>
+        <div class="social d-flex justify-content-center">
+          <a
+            href="https://www.facebook.com/TerritoryManager-296510564516503"
+            target="_blank"
+            class="mx-2"
+          >
+            <i class="fab fa-facebook-f"></i>
+          </a>
         </div>
       </div>
+    </section>
 
-      <div class="social d-flex justify-content-center">
-        <a href="https://www.facebook.com/TerritoryManager-296510564516503" target="_blank" class="mx-2">
-          <i class="fab fa-facebook-f"></i>
-        </a>
+    <!-- Footer -->
+    <footer class="bg-black small text-center text-white-50">
+      <div class="container">
+        Copyright &copy; TerritoryManager.Tools 2018 - 2019
       </div>
+      <br />
+      <div class="container">
+        Disclaimer <br />
+        TerritoryManager.Tools is not an official website of Jehovah's
+        Witnesses, you can find the official website on
+        <a href="https://jw.org">jw.org</a> <br />
+        This website is also not part of the Watch Tower Bible and Tract Society
+        of Pennsylvania
+      </div>
+    </footer>
 
-    </div>
-  </section>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Footer -->
-  <footer class="bg-black small text-center text-white-50">
-    <div class="container">
-      Copyright &copy; TerritoryManager.Tools 2018 - 2019
-    </div>
-    <br>
-    <div class="container">
-      Disclaimer <br> TerritoryManager.Tools is not an official website of Jehovah's Witnesses, you can find the official website on <a href="https://jw.org">jw.org</a> <br> This website is also not part of the Watch Tower Bible and Tract Society of Pennsylvania
-    </div>
-  </footer>
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-  <!-- Custom scripts for this template -->
-  <script src="js/intersection-observer.min.js"></script>
-  <script src="js/lozad.min.js"></script>
-  <script src="js/grayscale.min.js"></script>
-
-</body>
-
+    <!-- Custom scripts for this template -->
+    <script src="js/intersection-observer.min.js"></script>
+    <script src="js/lozad.min.js"></script>
+    <script src="js/grayscale.min.js"></script>
+  </body>
 </html>
